@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Attendance Records</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+.header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:20px;
+    box-shadow:0 3px 10px rgba(0,0,0,.2);
+}
+
+.container{
+    width:95%;
+    max-width:1300px;
+    margin:40px auto;
+}
+
+.top{
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    text-decoration:none;
+    color:white;
+    background:#2563eb;
+    border-radius:8px;
+    transition:.3s;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#eef4ff;
+}
+
+.present{
+    color:green;
+    font-weight:bold;
+}
+
+.footer{
+    text-align:center;
+    color:#777;
+    margin:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>Attendance Records</h1>
+
+</div>
+
+<div class="container">
+
+<div class="top">
+
+<a class="btn" href="/dashboard">
+🏠 Back to Dashboard
+</a>
+
+</div>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Roll No.</th>
+<th>Department</th>
+<th>Date</th>
+<th>Time</th>
+<th>Status</th>
+</tr>
+
+{% for row in records %}
+
+<tr>
+
+<td>{{ row[0] }}</td>
+<td>{{ row[1] }}</td>
+<td>{{ row[2] }}</td>
+<td>{{ row[3] }}</td>
+<td>{{ row[4] }}</td>
+<td>{{ row[5] }}</td>
+
+<td class="present">
+{{ row[6] }}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<div class="footer">
+
+© 2026 AI Face Recognition Attendance System
+
+</div>
+
+</body>
+
+</html>

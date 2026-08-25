@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Students</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+.header{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:20px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+
+.container{
+    width:95%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+
+th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f1f5ff;
+}
+
+.btn{
+
+    display:inline-block;
+
+    background:#16a34a;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 18px;
+
+    border-radius:6px;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#15803d;
+
+}
+
+.top-buttons{
+
+    margin-bottom:20px;
+
+}
+
+.back{
+
+    background:#2563eb;
+
+}
+
+.back:hover{
+
+    background:#1d4ed8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+
+<h1>Registered Students</h1>
+
+</div>
+
+<div class="container">
+
+<div class="top-buttons">
+
+<a class="btn back" href="/dashboard">
+
+🏠 Dashboard
+
+</a>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Roll No.</th>
+
+<th>Department</th>
+
+<th>Register Face</th>
+
+</tr>
+
+{% for student in students %}
+
+<tr>
+
+<td>{{ student.id }}</td>
+
+<td>{{ student.name }}</td>
+
+<td>{{ student.roll }}</td>
+
+<td>{{ student.department }}</td>
+
+<td>
+
+<a
+class="btn"
+href="/register_face/{{ student.id }}">
+
+📷 Register Face
+
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>
